@@ -3,7 +3,7 @@
 //  square_liner
 //
 //  Created by virtualize on 2016/11/8.
-//  Copyright © 2016 virtualize. All rights reserved.
+//  Copyright ? 2016 virtualize. All rights reserved.
 //
 
 #include <iostream>
@@ -57,11 +57,12 @@ int main()
     }
     cout << "\nz = ax + by:\n";
     cin >> cm >> cn;
-    maxz = -21747483648;
-    minz = 21747483647;
+    maxz = -2000000;
+    minz = 2000000;
     bool good_value;//good value is a point in range
     for (int i = 0; i < c; i++)
     {
+    	cout << "\npoint " << i << " at\tx = " << x[i] << "\ty = " << y[i] << "\tz = " << cm*x[i] + cn*y[i];
         good_value = true;
         tx = x[i];
         ty = y[i];
@@ -69,7 +70,8 @@ int main()
             good_value = good_value&&judge(m[j], n[j], p[j]);
         if(!good_value)
             continue;
-        z[i] = cm*x[i] + cn*z[i];
+        cout << " *";
+        z[i] = cm*x[i] + cn*y[i];
         if (maxz<z[i])
         {
             maxz = z[i];
